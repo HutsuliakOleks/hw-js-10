@@ -11,7 +11,7 @@ function countItems(array, condition) {
       filteredArray.push(element);
     }
   }
-  return array, condition;
+  return (array, condition);
 }
 
 const isEven = (num) => (num) => 2 === 0;
@@ -40,9 +40,11 @@ console.log(calculate(10, 0, divide));
 
 // Завдання 3
 function repeatMessage(times, messageCreator) {
-    for (let i = 0; i < times; i = i + 1) {
-        const repeat = messageCreator(i);
-    }
-    return repeatMessage(times, messageCreator);
+  for (let i = 0; i < times; i = i + 1) {
+    console.log(messageCreator(i));
+  }
 }
-console.log(repeatMessage(3, "Sasha"));
+function creatorCounter(index) {
+  return `Your Message: ${index + 1}`;
+}
+repeatMessage(3, creatorCounter);
